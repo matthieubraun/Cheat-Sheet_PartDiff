@@ -1,0 +1,42 @@
+\subsection*{Analyse de convergence}
+\textbf{Erreur de troncature}\\
+L'erreur de troncature est l'erreur commise en remplaçant une dérivée par une différence finie:
+\begin{equation*}
+    \boxed{|e_h'(x_i)|=|u_h'(x_i)-u'(x_i)|\leq C\cdot h^p}
+\end{equation*}
+avec $p$ l'ordre du stencil (degré de la dérivée approchée).\\
+\underline{Exemple:}\\
+Pour déterminer l'erreur de troncature, on exprime le stencil grâce Taylor.
+Pour un schéma centré $u'(x_i)$:
+\begin{align*}
+    u_{i+1}=u(x_i+h)= & u(x_i)+hu'(x_i)+\frac{h^2}{2}u''(x_i)                     \\
+                      & +\frac{h^3}{6}u'''(x_i)+\frac{h^4}{24}u^{(4)}(x_i)+\cdots \\
+    u_{i-1}=u(x_i-h)= & u(x_i)-hu'(x_i)+\frac{h^2}{2}u''(x_i)                     \\
+                      & -\frac{h^3}{6}u'''(x_i)+\frac{h^4}{24}u^{(4)}(x_i)+\cdots \\
+\end{align*}
+et on soustraie les deux équations:
+\begin{subequations}
+    \begin{equation*}
+        u_{i+1}-u_{i-1}=2hu'(x_i)+\frac{h^3}{3}u'''(x_i)+\cdots
+    \end{equation*}
+    \begin{equation*}
+        u'(x_i)=\frac{u_{i+1}-u_{i-1}}{2h}-\frac{h^2}{6}u'''(x_i)+\cdots
+    \end{equation*}
+\end{subequations}
+Ce qui donne l'erreur de troncature:
+\begin{equation*}
+    e_h'(x_i)\leq\underbrace{\frac{h^2}{6}u'''(x_i)}_C\cdot h^2
+\end{equation*}
+\textbf{Vitesse de couvergence (erreur à priori)}\\
+% \begin{gather*}
+%     ||(\overrightarrow{u})_h-\overrightarrow{u}_h||_{\infty}\leq C\cdot h^p\\
+%     ||(\overrightarrow{u})_h-\overrightarrow{u}_h||_{\infty}\leq \underbrace{||\mathcal{L}_h^{-1}||_{\infty}}_{\leq C_S}\cdot \underbrace{||\mathcal{L}_h(\overrightarrow{u})_h-\mathcal{L}_h\overrightarrow{u}_h||_{\infty}}_{\kappa h^p}\leq C_S\kappa h^p
+% \end{gather*}
+\begin{empheq}[box=\fbox]{gather*}
+    ||(\overrightarrow{u})_h-\overrightarrow{u}_h||_{\infty}\leq C\cdot h^p\\
+    ||(\overrightarrow{u})_h-\overrightarrow{u}_h||_{\infty}\leq \underbrace{||\mathcal{L}_h^{-1}||_{\infty}}_{\leq C_S}\cdot \underbrace{||\mathcal{L}_h(\overrightarrow{u})_h-\mathcal{L}_h\overrightarrow{u}_h||_{\infty}}_{\kappa h^p}\leq C_S\kappa h^p
+\end{empheq}
+avec $C_S$ la stabilité et $\kappa h^p$ la consistance.
+
+
+

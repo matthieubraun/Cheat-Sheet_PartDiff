@@ -1,0 +1,67 @@
+\subsection*{Laplace}
+\textbf{Table des transformées de Laplace:}
+\begin{center}
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{cc}
+        \toprule
+        $f(t)$                                            & $F(s)$                                   \\
+        \midrule
+        $H(t)$                                            & $\frac{1}{s}$                            \\
+        $t$                                               & $\frac{1}{s^2}$                          \\
+        $t^n$                                             & $\frac{n!}{s^{n+1}}$                     \\
+        $\sqrt{t}$                                        & $\frac{1}{2}\sqrt{\pi}s^{-\sfrac{3}{2}}$ \\
+        $\frac{1}{\sqrt{t}}$                              & $\sqrt{\pi}s^{-\sfrac{1}{2}}$            \\
+        $e^{at}$                                          & $\frac{1}{s-a}$                          \\
+        $\sin(\omega t)$                                  & $\frac{\omega}{s^2+\omega^2}$            \\
+        $\cos(\omega t)$                                  & $\frac{s}{s^2+\omega^2}$                 \\
+        $\sinh(at)$                                       & $\frac{a}{s^2-a^2}$                      \\
+        $\cosh(at)$                                       & $\frac{s}{s^2-a^2}$                      \\
+        $H(t-b)$                                          & $\frac{e^{-bs}}{s}$                      \\
+        $\delta(t-b)$                                     & $e^{-bs}$                                \\
+        $a(4\pi t^3)^{-\sfrac{1}{2}}e^{-\sfrac{a^2}{4t}}$ & $e^{a\sqrt{s}}$                          \\
+        $(\pi t)^{-\sfrac{1}{2}}e^{-\sfrac{a^2}{4t}}$     & $\frac{1}{\sqrt{s}}e^{a\sqrt{s}}$        \\
+        $1-\text{erf}\left(\frac{a}{\sqrt{4t}}\right)$    & $\frac{1}{s}e^{a\sqrt{s}}$               \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+\textbf{Propriétés:}
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{cc}
+        \toprule
+        Fonction                                                & Transformée                                     \\
+        \midrule
+        $af(t)+bg(t)$                                           & $aF(s)+bG(s)$                                   \\
+        $\frac{\mathrm{d}f}{\mathrm{d}t}$                       & $sF(s)-f(0)$                                    \\
+        $\frac{\mathrm{d}^2f}{\mathrm{d}t^2}$                   & $s^2F(s)-sf(0)-f'(0)$                           \\
+        $e^{bt}f(t)$                                            & $F(s-b)$                                        \\
+        $\frac{f(t)}{t}$                                        & $\int_s^\infty F(\tilde{s})\mathrm{d}\tilde{s}$ \\
+        $tf(t)$                                                 & $-\frac{\mathrm{d}F}{\mathrm{d}s}$              \\
+        $H(t-b)f(t-b)$                                          & $e^{-bs}F(s)$                                   \\
+        $f(ct)$                                                 & $\frac{1}{c}F\left(\frac{s}{c}\right)$          \\
+        $\int_0^tg(t-\tilde{t})f(\tilde{t})\mathrm{d}\tilde{t}$ & $G(s)F(s)$                                      \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+\columnbreak
+\textbf{Exemples:}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=\textheight-1cm, width=\columnwidth]{images/semaine7_exemple_laplace4.jpg}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=\textheight, width=\columnwidth]{images/semaine7_exemple_laplace5.jpg}
+\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\linewidth]{images/semaine7_exemple_laplace1.png}
+% \end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\linewidth]{images/semaine7_exemple_laplace2.png}
+% \end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\linewidth]{images/semaine7_exemple_laplace3.png}
+% \end{figure}

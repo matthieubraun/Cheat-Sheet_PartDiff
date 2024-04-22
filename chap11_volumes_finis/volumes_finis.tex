@@ -1,0 +1,33 @@
+\subsection*{Méthode des volumes finis}
+\textbf{Flux:}\\
+\underline{Convectif:}
+\begin{equation*}
+    \boxed{\int_{\partial C_{ij}}(\overrightarrow{v}\space u)\cdot \overrightarrow{n}\space\mathrm{d}S\approx \phi_{ij}^C(u)=|\partial C_{ij}|(\overrightarrow{v_{ij}}\cdot\overrightarrow{n_{ij}})\cdot u_{ij}}
+\end{equation*}
+\underline{Diffusif:}
+\begin{equation*}
+    \boxed{\int_{\partial C_{ij}}(\mu \nabla u)\cdot \overrightarrow{n}\space\mathrm{d}S\approx \phi_{ij}^D(u)=|\partial C_{ij}|\frac{\mu}{l_{ij}}(u_j-u_i)}
+\end{equation*}
+% \textbf{Schéma:}
+% \begin{equation*}
+%     \boxed{\frac{\mathrm{d}u_i}{\mathrm{d}t}=\frac{1}{V_i}\sum_{j\in\mathcal{N}_i}(\phi_{ij}^C(u)+\phi_{ij}^D(u))}
+% \end{equation*}
+\textbf{Création du maillage (diagramme de Voronoi):}\\
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.49\columnwidth}
+        \includegraphics[width=\columnwidth]{images/semaine13_maillage1.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.49\columnwidth}
+        \includegraphics[width=\columnwidth]{images/semaine13_maillage2.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.49\columnwidth}
+        \includegraphics[width=\columnwidth]{images/semaine13_maillage3.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.49\columnwidth}
+        \includegraphics[width=\columnwidth]{images/semaine13_maillage4.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\columnwidth}
+        \includegraphics[width=\columnwidth]{images/semaine13_maillage5.png}
+    \end{minipage}
+\end{figure}
